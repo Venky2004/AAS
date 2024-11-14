@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const cropSchema = new mongoose.Schema({
   datetime_created: { type: Date, default: Date.now },
+  name:String,
   description: String,
   price: Number,
   posted_by: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },

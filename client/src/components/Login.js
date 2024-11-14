@@ -13,6 +13,8 @@ const Login = () => {
     try {
       const { data } = await api.post('/users/login', { email, password });
       localStorage.setItem('token', data.token);
+      localStorage.setItem('userRole', data.role);
+      console.log(localStorage.getItem('token'));
       navigate('/crops');
     } catch (error) {
       console.error('Login failed:', error);
